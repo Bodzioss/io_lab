@@ -1,13 +1,10 @@
-package main.java.subbusinesstier.entities;
-
-import subbusinesstier.entities.Rezerwacja;
+package aplikacja.entities;
 
 import java.util.ArrayList;
 
 public class Film {
 
 	private int idFilmu;
-	private DaneFilmu daneFilmu;
 	private Rezerwacja rezerwacja;
 	private String tytul;
 	private String gatunek;
@@ -15,15 +12,26 @@ public class Film {
 	private String nazwisko;
 	private long rokProdukcji;
 	private String wytwornia;
+
+	public long getIloscEgzemplarzy() {
+		return iloscEgzemplarzy;
+	}
+
+	public void setIloscEgzemplarzy(long iloscEgzemplarzy) {
+		this.iloscEgzemplarzy = iloscEgzemplarzy;
+	}
+
+	private long iloscEgzemplarzy;
 	private ArrayList<Film> filmy = new ArrayList<Film>();
 
-	public Film(String tytul, String gatunek, String imie, String nazwisko, long rokProdukcji, String wytwornia) {
+	public Film(String tytul, String gatunek, String imie, String nazwisko, long rokProdukcji, String wytwornia, long iloscEgzemplarzy) {
 		this.tytul = tytul;
 		this.gatunek = gatunek;
 		this.imie = imie;
 		this.nazwisko = nazwisko;
 		this.rokProdukcji = rokProdukcji;
 		this.wytwornia = wytwornia;
+		this.iloscEgzemplarzy = iloscEgzemplarzy;
 	}
 
 	public int getIdFilmu() {return idFilmu;}
@@ -61,4 +69,8 @@ public class Film {
 	public void setWytwornia(String wytwornia) {this.wytwornia = wytwornia;}
 
 	public String toString() {return "test";}
+
+	public static long decreaseIloscEgzemplarzy(long iloscEgzemplarzy) {return iloscEgzemplarzy-1;}
+
+
 }

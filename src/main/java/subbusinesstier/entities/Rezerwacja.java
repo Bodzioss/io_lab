@@ -1,39 +1,29 @@
-package subbusinesstier.entities;
-
-import main.java.subbusinesstier.entities.Film;
-import main.java.subbusinesstier.entities.Klient;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
+package aplikacja.entities;
 
 public class Rezerwacja {
 
-	private int idRezerwacji;
-	private LocalDate data;
-	private ArrayList<Film> filmy = new ArrayList<Film>();
-	private Klient klient;
+	private String title;
+	private String login;
 
-	public int getIdRezerwacji() {
-		return idRezerwacji;
+	public Rezerwacja(String title, String login) {
+		this.title = title;
+		this.login = login;
 	}
 
-	public void setIdRezerwacji(int idRezerwacji) {
-		this.idRezerwacji = idRezerwacji;
+	public String getTitle() {
+		return title;
 	}
 
-	public LocalDate getData() {
-		return data;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public void setData(LocalDate data) {this.data = data;}
+	public String getLogin() {
+		return login;
+	}
 
-	public ArrayList<Film> getFilm() {return filmy;}
-
-	public void setFilm(ArrayList<Film> filmy) {this.filmy = filmy;}
-
-	public Klient getKlient() {return klient;}
-
-	public void setKlient(Klient klient) {
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 }
